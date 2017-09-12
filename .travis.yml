@@ -1,7 +1,8 @@
 language: node_js
 node_js:
-  - '8'
-  - '7'
-  - '6'
-script:
-  npm install
+  - "8"
+install: npm install
+jobs:
+  include:
+    - stage: test
+      script: npm test
