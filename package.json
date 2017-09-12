@@ -1,16 +1,27 @@
 {
-  "name": "tracery-grammar",
-  "version": "2.7.2",
-  "description": "npm package for Kate Compton's tracery",
+  "name": "tracery-es8",
+  "version": "1.0.0",
+  "description": "A version of v21/tracery, but classbased and modularized.",
   "main": "tracery.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node ./test/basic"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/v21/tracery.git"
-},
-  
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "url": "git+https://github.com/kyranet/tracery.git"
   },
-  "author": "Kate Compton (packaged by v21)",
-  "license": "ISC"
+  "keywords": [
+    "tracery",
+    "es8"
+  ],
+  "author": "Kate Compton (packaged by v21, edited by kyraNET)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyranet/tracery/issues"
+  },
+  "homepage": "https://github.com/kyranet/tracery#readme"
 }
