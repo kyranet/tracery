@@ -13,13 +13,6 @@ This package uses what is known as [Syntactic Sugar](https://en.wikipedia.org/wi
 This is hosted at npm, so it can be installed like so:
 
 ```bash
-$ npm install tracery-es8 --save
-npm installation...
-```
-
-For Node.js 8.x folks, you may use:
-
-```bash
 $ npm install tracery-es8 --production
 npm installation...
 ```
