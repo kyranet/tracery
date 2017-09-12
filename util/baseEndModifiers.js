@@ -33,9 +33,7 @@ module.exports = {
     s: (s) => {
         switch (s.charAt(s.length - 1)) {
             case 's':
-                return `${s}es`;
             case 'h':
-                return `${s}es`;
             case 'x':
                 return `${s}es`;
             case 'y':
@@ -50,20 +48,31 @@ module.exports = {
     },
     ed: (s) => {
         switch (s.charAt(s.length - 1)) {
-            case 's':
-                return `${s}ed`;
             case 'e':
                 return `${s}d`;
-            case 'h':
-                return `${s}ed`;
-            case 'x':
-                return `${s}ed`;
             case 'y':
                 return !isVowel(s.charAt(s.length - 2)) ? `${s.substring(0, s.length - 1)}ied` : `${s}d`;
             default:
                 return `${s}ed`;
         }
+    },
+    ing: (s) => {
+        const lastChar = s.charAt(s.length - 1).toLowerCase();
+        const secondChar = s.charAt(s.length - 2).toLowerCase();
+        const thirdChar = s.charAt(s.length - 3).toLowerCase();
+
+        if (lastChar === 'e') {
+            if (secondChar === 'i') return `${s.substring(0, s.length - 2)}ying`;
+            return `${s.substring(0, s.length - 1)}ing`;
+        }
+        if (!isVowel(lastChar) && isVowel(secondChar) && !isVowel(thirdChar)) {
+            return countSyllables(s) === 2 ? `${s}ing` : `${s}${lastChar}ing`;
+        }
+        if (lastChar === 'w' || lastChar === 'x' || lastChar === 'y') return `${s}ing`;
+
+        // TODO: If the verb ends in an unstressed vowel + R, we do not double the final R and add ING.
+        return `${s}ing`;
     }
 };
 
-const { escapeRegExp, isAlphaNum, isVowel } = require('./util');
+const { escapeRegExp, isAlphaNum, isVowel, countSyllables } = require('./util');

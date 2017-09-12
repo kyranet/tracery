@@ -4,11 +4,13 @@
   "description": "A version of v21/tracery, but classbased and modularized.",
   "main": "tracery.js",
   "directories": {
-    "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "test": "node ./test/basic"
+    "test": "node ./test/test && eslint --fix ./"
+  },
+  "devDependencies": {
+    "eslint": "^4.6.1"
   },
   "repository": {
     "type": "git",

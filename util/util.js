@@ -165,6 +165,14 @@ module.exports = class Util {
         return sections;
     }
 
+    static countSyllables(word) {
+        word = word.toLowerCase();
+        if (word.length <= 3) return 1;
+        return word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '')
+            .replace(/^y/, '')
+            .match(/[aeiouy]{1,2}/g).length;
+    }
+
 };
 
 const Grammar = require('../lib/Grammar');
