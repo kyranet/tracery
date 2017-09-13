@@ -1,6 +1,6 @@
 {
   "name": "tracery-es8",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A version of v21/tracery, but classbased and modularized.",
   "main": "tracery.js",
   "directories": {
